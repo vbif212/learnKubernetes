@@ -1,0 +1,4 @@
+{
+  "tokenUrl": "http://172.17.228.231:30185/spring-security-oauth-server/oauth/token",
+  "resourceUrl": "http://172.17.228.231:30728/spring-security-oauth-resource/issues"
+}

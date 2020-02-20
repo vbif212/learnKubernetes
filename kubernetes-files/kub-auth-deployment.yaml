@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment                                          
+metadata:
+  name: kub-auth
+  labels:
+    app: kub-auth
+spec:
+  selector:
+    matchLabels:
+      app: kub-auth
+  replicas: 1                                         
+  template:
+    metadata:
+      labels:
+        app: kub-auth                               
+    spec:
+      containers:
+        - image: msotnikov/kub-auth                         
+          name: kub-auth
+          ports:
+            - containerPort: 8081

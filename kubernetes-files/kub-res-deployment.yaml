@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment                                          
+metadata:
+  name: kub-res
+  labels:
+    app: kub-res
+spec:
+  selector:
+    matchLabels:
+      app: kub-res
+  replicas: 1                                         
+  template:
+    metadata:
+      labels:
+        app: kub-res                               
+    spec:
+      containers:
+        - image: msotnikov/kub-res                         
+          name: kub-res
+          env:
+          - name: OAUTH_TOKEN_URL
+            value: "http://172.17.228.231:30185"
+          ports:
+            - containerPort: 8085

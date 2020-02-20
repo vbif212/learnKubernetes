@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment                                          
+metadata:
+  name: kub-front
+  labels:
+    app: kub-front
+spec:
+  selector:
+    matchLabels:
+      app: kub-front
+  replicas: 3                                         
+  template:
+    metadata:
+      labels:
+        app: kub-front                               
+    spec:
+      containers:
+        - image: msotnikov/kub-front:minikube.v2                         
+          name: kub-front
+          ports:
+            - containerPort: 80
