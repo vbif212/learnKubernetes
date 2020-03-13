@@ -36,7 +36,7 @@ npm run build
 docker build -f $DOCKERFILE_PATH -t $IMAGE_NAME .
 ```
 7. Deploy <b>reactclient</b>  
-Open "kubernetes-files/kub-front-deployment.yaml" file and replace <b>containers image</b>
+Open "kubernetes-files/kub-front-deployment.yaml" file and replace <b>containers image to $IMAGE_NAME</b>
 ```sh
 kubectl apply -f ./kubernetes-files/kub-front-deployment.yaml --record
 kubectl apply -f ./kubernetes-files/service-kub-front-lb.yaml
